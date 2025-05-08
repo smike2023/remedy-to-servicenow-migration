@@ -1,0 +1,44 @@
+# Creates standardized Remedy to ServiceNow Migration folder structure
+# Paste this into a .ps1 file or run line-by-line in PowerShell
+
+$root = "$HOME\Documents\Remedy_to_ServiceNow_Migration"
+
+$folders = @(
+    "00_PROJECT_CONTROL\Daily_Logs",
+    "00_PROJECT_CONTROL\Status_Reports",
+    "00_PROJECT_CONTROL\Meeting_Notes",
+    "01_SOURCE_DATA_REMEDY\SRXML_Samples",
+    "01_SOURCE_DATA_REMEDY\JSON_Samples",
+    "01_SOURCE_DATA_REMEDY\XSLT_Schemas",
+    "01_SOURCE_DATA_REMEDY\SR_Item_Matrix",
+    "01_SOURCE_DATA_REMEDY\Attachment_Samples",
+    "02_TRANSFORM_DESIGN\VPN_ID",
+    "02_TRANSFORM_DESIGN\TSR_Orders",
+    "02_TRANSFORM_DESIGN\Routing_Approvals",
+    "02_TRANSFORM_DESIGN\Email_XML",
+    "02_TRANSFORM_DESIGN\Attachments",
+    "03_SERVICENOW_IMPORTS\ImportSet_XML_Samples",
+    "03_SERVICENOW_IMPORTS\Table_Schemas",
+    "03_SERVICENOW_IMPORTS\TargetFieldDefinitions",
+    "03_SERVICENOW_IMPORTS\Testing_Results",
+    "04_REFERENCE_ARTIFACTS\Methodology_Slides",
+    "04_REFERENCE_ARTIFACTS\KDRE_Matrix",
+    "04_REFERENCE_ARTIFACTS\DMP_PoC_Workbooks",
+    "04_REFERENCE_ARTIFACTS\DSF_User_Guide",
+    "05_CODE_AND_SCRIPTS\Python",
+    "05_CODE_AND_SCRIPTS\PowerShell",
+    "05_CODE_AND_SCRIPTS\SQL",
+    "05_CODE_AND_SCRIPTS\GitHub_Safe_Versions",
+    "99_Z_ARCHIVE\Unsorted_Uploads",
+    "99_Z_ARCHIVE\Legacy_Versions",
+    "99_Z_ARCHIVE\Images_Reference"
+)
+
+foreach ($folder in $folders) {
+    $path = Join-Path $root $folder
+    if (-not (Test-Path $path)) {
+        New-Item -Path $path -ItemType Directory | Out-Null
+    }
+}
+
+Write-Host "Folder structure created under: $root"
