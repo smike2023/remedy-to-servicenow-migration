@@ -1,65 +1,61 @@
-# Remedy to ServiceNow Migration Survival Kit 🚀
+# Remedy to ServiceNow SRXML Migration – Transformation Prototype
 
-This repository contains tools, documentation, and templates to support a full migration from BMC Remedy (SRXML format) to ServiceNow CMDB and related modules.
+This repository documents a mock workflow and proof-of-work framework for converting legacy Remedy SRXML data into ServiceNow-compatible XML for import and transformation.
 
----
+## 📌 Objective
 
-## 📁 Folder Structure
+To demonstrate a working model for the **transform and load** phases of a Remedy to ServiceNow migration, using placeholder data and mocked structure — pending official access to SRXML source files or schema documentation.
 
-- `scripts/`  
-  Contains Python scripts to parse and transform SRXML, including a starter parser.
+## 🧱 Workflow Overview
 
-- `transform_maps/`  
-  Sample ServiceNow transform map configurations in JSON format.
+### Step 1: Extract (Blocked)
 
-- `import_samples/`  
-  Example SRXML files and ServiceNow-compatible XML output for testing imports.
+- Source data (SRXML exports from Remedy) is assumed to be handled by Dan (Remedy gatekeeper).
+- No access has been provided as of this writing.
 
-- `docs/`  
-  Markdown guides, mapping walkthroughs, and business rule cheat sheets.
+### Step 2: Transform (Prototype in Progress)
 
-- `notion/`  
-  A Notion dashboard template to track your migration project in detail.
+- **Input**: SampleC:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\mock SRXML file (`C:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\samplesC:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\mock_srxml.xml`)
+- **Process**: Parse XML → flatten hierarchy → cleanC:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\normalize values
+- **Output**: Flattened XML compatible with ServiceNow Import Sets
 
-- `one-pager/`  
-  Printable PDF War Map summarizing the ETL flow and migration phases.
+### Step 3: Load
 
----
+- Import flattened XML using ServiceNow Import Sets
+- Use Transform Maps to map to appropriate target tables (e.g., `cmdb_ci`, `sc_req_item`, etc.)
 
-## 🧠 Project Goals
+## 🛠️ Tools & Scripts
 
-- Flatten complex SRXML data into ServiceNow-readable format
-- Create import set tables and transform maps for automated ingestion
-- Empower non-developers with step-by-step documentation
-- Maintain operational awareness with a visual War Map and Notion board
+- `parse_srxml.py`: Reads SRXML file and prints basic structure (placeholder logic)
+- `flatten_srxml.py`: Converts nested XML into flattened keyC:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\value format
+- `transform_map_sample.xlsx`: Spreadsheet for defining mappings between SRXML fields and ServiceNow fields
 
----
+## ✅ Proof of Work
 
-## 🛠️ Requirements
+- All work here is based on available public data and placeholder assumptions.
+- This repo serves as documentation of initiative taken *prior to receiving official data*.
 
-- Git
-- Python 3.x
-- Access to ServiceNow instance (with Import Set/Transform Map permissions)
+## 🚫 Known Blockers
 
----
+| Area         | Status       | Details                                      |
+|--------------|--------------|----------------------------------------------|
+| SRXML Access | Blocked      | No source files or schema provided yet       |
+| SQL Scripts  | Incomplete   | Provided with no context or source mappings  |
+| Role Clarity | Misaligned   | Remedy experience was assumed but never scoped |
 
-## ✅ Getting Started
+## 🔒 Context (Internal)
 
-1. Clone this repository
-2. Follow the `docs/TSR_Mapping_Plan.md` for step-by-step import guidance
-3. Use `scripts/srxml_parser.py` to test parsing your SRXML files
-4. Load results into ServiceNow using your import set + transform map
-5. Reference the War Map for your ETL strategy
+This repo is maintained by a BCMC contractor assigned to assist with data transformation tasks on the DISA Remedy → ServiceNow migration. This repo exists to demonstrate readiness and initiative while awaiting access to source data or clarified scope from project leadership.
 
----
+## 📁 Directory Structure
 
-## 🧩 Contribute
-
-PRs and forks welcome — especially if you’ve mapped more SRXML edge cases.
-
----
-
-## 🔐 Status
-
-This repo is currently under active setup by @SamMike for a federal data migration project.
-
+```
+C:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\
+├── samplesC:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\
+│   └── mock_srxml.xml
+├── scriptsC:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\
+│   ├── parse_srxml.py
+│   └── flatten_srxml.py
+├── transform_map_sample.xlsx
+└── README.md
+```
