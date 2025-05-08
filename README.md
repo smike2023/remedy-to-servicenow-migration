@@ -10,13 +10,13 @@ To demonstrate a working model for the **transform and load** phases of a Remedy
 
 ### Step 1: Extract (Blocked)
 
-- Source data (SRXML exports from Remedy) is assumed to be handled by Dan (Remedy gatekeeper).
+- Source data (SRXML exports from Remedy) is assumed to be handled by a restricted access group.
 - No access has been provided as of this writing.
 
 ### Step 2: Transform (Prototype in Progress)
 
-- **Input**: SampleC:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\mock SRXML file (`C:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\samplesC:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\mock_srxml.xml`)
-- **Process**: Parse XML → flatten hierarchy → cleanC:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\normalize values
+- **Input**: Sample/mock SRXML file (`/samples/mock_srxml.xml`)
+- **Process**: Parse XML → flatten hierarchy → clean/normalize values
 - **Output**: Flattened XML compatible with ServiceNow Import Sets
 
 ### Step 3: Load
@@ -27,7 +27,7 @@ To demonstrate a working model for the **transform and load** phases of a Remedy
 ## 🛠️ Tools & Scripts
 
 - `parse_srxml.py`: Reads SRXML file and prints basic structure (placeholder logic)
-- `flatten_srxml.py`: Converts nested XML into flattened keyC:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\value format
+- `flatten_srxml.py`: Converts nested XML into flattened key/value format
 - `transform_map_sample.xlsx`: Spreadsheet for defining mappings between SRXML fields and ServiceNow fields
 
 ## ✅ Proof of Work
@@ -41,19 +41,19 @@ To demonstrate a working model for the **transform and load** phases of a Remedy
 |--------------|--------------|----------------------------------------------|
 | SRXML Access | Blocked      | No source files or schema provided yet       |
 | SQL Scripts  | Incomplete   | Provided with no context or source mappings  |
-| Role Clarity | Misaligned   | Remedy experience was assumed but never scoped |
+| Role Clarity | Misaligned   | Legacy platform expertise was assumed        |
 
-## 🔒 Context (Internal)
+## 🔒 Context
 
-This repo is maintained by a BCMC contractor assigned to assist with data transformation tasks on the DISA Remedy → ServiceNow migration. This repo exists to demonstrate readiness and initiative while awaiting access to source data or clarified scope from project leadership.
+This repo is maintained by a contractor assigned to assist with data transformation tasks on a Remedy → ServiceNow migration. It exists to demonstrate readiness and initiative while awaiting access to source data or clarified scope from project stakeholders.
 
 ## 📁 Directory Structure
 
 ```
-C:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\
-├── samplesC:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\
+/
+├── samples/
 │   └── mock_srxml.xml
-├── scriptsC:\Users\sammy\OneDrive\Documents\@BCMC\projects\RemedySNOWMigration\
+├── scripts/
 │   ├── parse_srxml.py
 │   └── flatten_srxml.py
 ├── transform_map_sample.xlsx
