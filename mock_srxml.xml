@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SRXMLExport>
+    <ServiceRequest>
+        <ID>REQ0012345</ID>
+        <Title>Example Service Request</Title>
+        <Description>Mock service request data extracted from Remedy</Description>
+        <Status>Open</Status>
+        <RequestedFor>jsmith</RequestedFor>
+        <SubmitDate>2025-05-01</SubmitDate>
+    </ServiceRequest>
+</SRXMLExport>
