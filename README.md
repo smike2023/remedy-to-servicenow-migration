@@ -15,7 +15,7 @@ To demonstrate a working model for the **transform and load** phases of a Remedy
 
 ### Step 2: Transform (Prototype in Progress)
 
-- **Input**: Sample/mock SRXML file (`/samples/mock_srxml.xml`)
+- **Input**: Sample/mock SRXML file (`mock_srxml.xml`)
 - **Process**: Parse XML → flatten hierarchy → clean/normalize values
 - **Output**: Flattened XML compatible with ServiceNow Import Sets
 
@@ -26,9 +26,10 @@ To demonstrate a working model for the **transform and load** phases of a Remedy
 
 ## 🛠️ Tools & Scripts
 
-- `parse_srxml.py`: Reads SRXML file and prints basic structure (placeholder logic)
-- `flatten_srxml.py`: Converts nested XML into flattened key/value format
-- `transform_map_sample.xlsx`: Spreadsheet for defining mappings between SRXML fields and ServiceNow fields
+- `scripts/parse_srxml.py`: Reads SRXML file and prints basic structure
+- `scripts/flatten_srxml.py`: Converts nested XML into flattened key/value format
+- `mock_srxml.xml`: Example Remedy data file for prototyping
+- `transform_map_sample.xlsx`: Spreadsheet for mapping SRXML fields to ServiceNow targets
 
 ## ✅ Proof of Work
 
@@ -51,11 +52,10 @@ This repo is maintained by a contractor assigned to assist with data transformat
 
 ```
 /
-├── samples/
-│   └── mock_srxml.xml
+├── mock_srxml.xml
+├── transform_map_sample.xlsx
 ├── scripts/
 │   ├── parse_srxml.py
 │   └── flatten_srxml.py
-├── transform_map_sample.xlsx
 └── README.md
 ```
