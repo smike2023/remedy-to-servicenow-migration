@@ -1,0 +1,36 @@
+Remedy to ServiceNow Migration – Folder Structure Reference
+This 1-page reference explains where to store files, what each folder means, and how to organize the mess of data and documents you've received from multiple sources.
+00_PROJECT_CONTROL
+Use this to track your actions and decisions.
+- Daily_Logs: What you did each day, saved as .docx or .txt
+- Status_Reports: Any reports or deliverables
+- Meeting_Notes: Notes from calls or check-ins with Dennis, Joey, etc.
+01_SOURCE_DATA_REMEDY
+Put any original data exports here.
+- SRXML_Samples: Raw Remedy exports (.srxml files)
+- JSON_Samples: VPN or routing JSON files
+- XSLT_Schemas: .xsd, .xslt files used to define/transform XML
+- SR_Item_Matrix: Excel files showing field definitions (TSR Data Standards)
+- Attachment_Samples: Folder of exported files or base64 images
+02_TRANSFORM_DESIGN
+Where you design field mappings and transformation logic.
+- One subfolder per migration stream (VPN, Orders, etc.)
+- Put field maps, transformation rules, and scripts for each type here
+03_SERVICENOW_IMPORTS
+Where you store anything related to importing into ServiceNow.
+- ImportSet_XML_Samples: Finalized XML to load into SN
+- Table_Schemas: Target table definitions from SN
+- TargetFieldDefinitions: Field names, sys_ids, requirements
+- Testing_Results: Screenshots or notes from import tests
+04_REFERENCE_ARTIFACTS
+All documentation that defines how the system works.
+- DISAC PDFs, PoC slides, KDRE matrix, user guides
+- Keep these in case you need to explain a field or rule
+05_CODE_AND_SCRIPTS
+Scripts and automation tools (Python, PowerShell, SQL)
+- GitHub_Safe_Versions is for sanitized files you can copy from your personal machine
+99_Z_ARCHIVE
+Dump folder for things you don’t know where to put yet.
+- Unsorted_Uploads: Screenshots, temp downloads
+- Legacy_Versions: Old versions of spreadsheets
+- Images_Reference: Any photos or slides you captured
