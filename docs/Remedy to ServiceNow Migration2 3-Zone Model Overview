@@ -1,0 +1,25 @@
+Remedy to ServiceNow Migration: 3-Zone Model Overview
+This document explains the high-level migration path from SRXML Remedy exports into ServiceNow. It breaks the process into three zones to clarify how data flows and where each transformation occurs.
+ZONE A: SOURCE – Remedy (SRXML/XML)
+- Raw data exported by Dan (SRXML, SQL dump, attachments)
+- Examples: TSR_Email_Doc.srxml, base64 docs, attachment metadata
+- Output Format: SRXML/XML/CSV
+ZONE B: TRANSFORMATION – ETL + Import Set
+- Scripts (Python/PowerShell) parse SRXML and extract values
+- Import Set table stores staged XML payload
+- Transform Maps match fields (e.g., TSR Title → Short Description)
+- Adam’s script/UI Action may be used to parse/convert DOC fields
+ZONE C: DESTINATION – Final ServiceNow Table
+- Target: u_tsr_requests, cmdb_ci_computer, sc_req_item, etc.
+- Attachments linked using DocID
+- Records become visible to users/agents in ServiceNow UI
+- Verified post-import for data integrity and completeness
+Example Flow (Diagram):
+ZONE A           -->         ZONE B               -->         ZONE C
+SRXML Export     -->   Import Set + Transform     -->   Final SN Table
+                  (staging table + script)             (e.g., u_tsr_requests)
+Pending / Notes:
+- Still need access to: x_g_dis_dmp_order_tsr_list.do (denied currently)
+- Clarify if that table reflects post-transform RITM/Order data
+Closing Statement:
+Let me know where this pipeline can be clarified or streamlined. I'm happy to adjust mappings or add more visibility into the transform layer if needed.
